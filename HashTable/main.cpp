@@ -7,9 +7,35 @@
 //
 
 #include <iostream>
+#include "Hash.h"
+
+using namespace std;
+using namespace hash_space;
+
+int str_size(string str);
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    HashTable<string, string> hash;
+    int hash_val;
+    
+    //initialize hash table
+    hash.init();
+    
+    hash_val = hash.hash_function("Dummy Value", 16);
+    hash.insert(hash_val, "Dummy Value", "256-222-4444");
+    
+    hash_val = hash.hash_function("Brandon Jinright", 12);
+    hash.insert(hash_val, "Brandon Jinright", "256-998-2862");
+    
+    hash.print();
+    
     return 0;
+}
+
+int str_size(string str) {
+    int size = 0;
+    
+    
+    
+    return size;
 }
